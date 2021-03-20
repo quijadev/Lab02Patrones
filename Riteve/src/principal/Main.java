@@ -2,11 +2,14 @@ package principal;
 
 public class Main {
 
-    static GestorVehiculo gestor;
+    static Gestor gestor;
 
     public static void main(String[] args) {
-        int vehId, decibeles = 30, emision = 2;
-        gestor = new GestorVehiculo();
+        int vehId, decibeles = 30, emision = 2; //TODO randomizar esto
+
+        //CREACION DE VEHICULOS
+
+        gestor = new Gestor();
 
         //Crea un nuevo vehiculo
         gestor.nuevoVehiculo(emision, decibeles);
@@ -28,10 +31,11 @@ public class Main {
         gestor.agregarLuces(vehId, 6, "Delantero", "Izquierdo", "Bueno", "Alta");
         gestor.agregarLuces(vehId, 7, "Trasero", "Izquierdo", "Bueno", "Retroceso");
 
-        //Agrega la suspension
-        gestor.agregarSuspensiones(vehId, 1, false);
-        gestor.agregarSuspensiones(vehId, 1, true);
 
-        System.out.println(gestor.getVehiculoData(vehId));
+        //EJECUCION DE CADENA
+
+        gestor.iniciarProceso();
+        gestor.ejecutarRevision();
+
     }
 }
