@@ -61,7 +61,7 @@ public class Reporte {
 
     public String getReporte() {
         String msj="";
-
+        msj+="\nCarro placa: "+carro.getPlaca()+".\n\n"+getResultadoAsientos()+getResultadoLuces()+getResultadoDecibelios()+getResultadoEmisiones();
         return msj;
     }
 }
