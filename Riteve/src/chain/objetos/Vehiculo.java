@@ -5,12 +5,14 @@ import java.util.ArrayList;
 public class Vehiculo {
     private int emisiones;
     private int decibelios;
+    private String placa;
     private ArrayList<Luz> luces;
     private ArrayList <Asiento> asientos;
 
-    public Vehiculo(int emisiones, int decibelios) {
+    public Vehiculo(int emisiones, int decibelios, String placa) {
         this.emisiones = emisiones;
         this.decibelios = decibelios;
+        this.placa = placa;
         luces = new ArrayList<>();
         asientos = new ArrayList<>();
     }
@@ -21,6 +23,10 @@ public class Vehiculo {
 
     public int getDecibelios() {
         return decibelios;
+    }
+
+    public String getPlaca() {
+        return placa;
     }
 
     public void setEmisiones(int emisiones) {

@@ -8,6 +8,7 @@ import chain.concreto.ControlLuces;
 import chain.objetos.Reporte;
 import chain.objetos.Vehiculo;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Gestor {
@@ -22,8 +23,8 @@ public class Gestor {
 
     //Vehiculos
 
-    public void nuevoVehiculo(int emisiones, int decibelios) {
-        carros.add(new Vehiculo(emisiones, decibelios));
+    public void nuevoVehiculo(int emisiones, int decibelios, String placa) {
+        carros.add(new Vehiculo(emisiones, decibelios,placa));
     }
 
     public void agregarLuces(int pId_Vehiculo, int iD, String posicion, String lado, String estado, String tipo) {
@@ -75,5 +76,14 @@ public class Gestor {
             checkpoint.ejecutarChequeo(carro,reporte);
             cont++;
         }
+    }
+
+    public void imprimirReportes() {
+        System.out.println("Resultado de revisiones técnicas vehiculares "+ LocalDate.now()+":");
+        String msj="";
+        for(Reporte reporte:reportes){
+            msj+=reporte.getReporte();
+        }
+        System.out.println(msj);
     }
 }
